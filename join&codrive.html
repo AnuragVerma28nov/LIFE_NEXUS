@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join an Eco Drive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/join&codrive.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <div class="navbar-logo">
+
+                <span class="navbar-logo-text">LifeNexus</span>
+            </div>
+            
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="navbar-menu">
+              <a href="index.html">Our Causes</a>
+              <a href="index.html">How It Works</a>
+              <a href="index.html">Stories</a>
+              <a href="index.html">About Us</a>
+              <a href="index.html">Contact Us</a>
+
+                
+            
+            </div>
+        </div>
+    </nav>
+    <div class="containerp">
+        <h1>Join an Eco Drive</h1>
+        <p class="subtitle">Find and participate in upcoming environmental events in your community.</p>
+        
+        <div class="filter-section">
+            <label for="category-filter" class="filter-label">Filter by:</label>
+            <select id="category-filter" class="filter-select">
+                <option value="all">All Categories</option>
+                <option value="cleanup">Community Cleanup</option>
+                <option value="planting">Tree Planting</option>
+                <option value="workshop">Workshop</option>
+            </select>
+        </div>
+        
+        <div class="events-list" id="events-container">
+            <!-- Events will be populated by JavaScript -->
+        </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+          <div class="footer-container">
+              <div class="footer-column">
+                  <div class="footer-logo">
+                      <span class="footer-logo-text">LifeNexus</span>
+                  </div>
+                  <p class="footer-description">One platform connecting people to causes that matter. Make a difference today.</p>
+                  <div class="footer-social">
+                      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+              </div>
+              
+              <div class="footer-column">
+                  <h4>Our Causes</h4>
+                  <ul class="footer-links">
+                      <li><a href="#">Blood Donation</a></li>
+                      <li><a href="#">Eco-Awareness</a></li>
+                      <li><a href="#">Lost & Found</a></li>
+                      <li><a href="#">Volunteer</a></li>
+                  </ul>
+              </div>
+              
+              <div class="footer-column">
+                  <h4>Company</h4>
+                  <ul class="footer-links">
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Our Team</a></li>
+                      <li><a href="#">Careers</a></li>
+                      <li><a href="#">Contact Us</a></li>
+                  </ul>
+              </div>
+              
+              <div class="footer-column">
+                  <h4>Legal</h4>
+                  <ul class="footer-links">
+                      <li><a href="#">Terms of Service</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Cookie Policy</a></li>
+                      <li><a href="#">FAQ</a></li>
+                  </ul>
+              </div>
+          </div>
+          
+          <div class="footer-bottom">
+              <p>&copy; <span id="current-year"></span> LifeNexus. All rights reserved.</p>
+          </div>
+      </div>
+  </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const events = [
+                {
+                    title: "Community Cleanup",
+                    date: "May 5, 2024",
+                    location: "Riverside Park",
+                    description: "Help clean up litter and beautify our local park.",
+                    category: "cleanup"
+                },
+                {
+                    title: "Tree Planting Initiative",
+                    date: "May 12, 2024",
+                    location: "Greenfield Neighborhood",
+                    description: "Join us to plant trees and green our streets.",
+                    category: "planting"
+                },
+                {
+                    title: "Beach Cleanup Day",
+                    date: "May 20, 2024",
+                    location: "Sunnydale Beach",
+                    description: "Help remove plastic waste from our shores.",
+                    category: "cleanup"
+                },
+                {
+                    title: "Recycling Workshop",
+                    date: "May 28, 2024",
+                    location: "Community Center",
+                    description: "Learn about effective recycling practices.",
+                    category: "workshop"
+                }
+            ];
+
+            const eventsContainer = document.getElementById('events-container');
+            const categoryFilter = document.getElementById('category-filter');
+
+            function renderEvents(filter = 'all') {
+                eventsContainer.innerHTML = '';
+                
+                const filteredEvents = filter === 'all' 
+                    ? events 
+                    : events.filter(event => event.category === filter);
+                
+                filteredEvents.forEach(event => {
+                    const eventCard = document.createElement('div');
+                    eventCard.className = 'event-card';
+                    
+                    eventCard.innerHTML = `
+                        <h3 class="event-title">${event.title}</h3>
+                        <div class="event-date-location">${event.date} - ${event.location}</div>
+                        <p class="event-description">${event.description}</p>
+                        <button class="join-button">Join Now</button>
+                    `;
+                    
+                    eventsContainer.appendChild(eventCard);
+                });
+            }
+
+            // Initial render
+            renderEvents();
+
+            // Filter event listener
+            categoryFilter.addEventListener('change', function() {
+                renderEvents(this.value);
+            });
+
+            // Add click event to all join buttons (using event delegation)
+            eventsContainer.addEventListener('click', function(e) {
+                if (e.target.classList.contains('join-button')) {
+                    const eventCard = e.target.closest('.event-card');
+                    const eventTitle = eventCard.querySelector('.event-title').textContent;
+                    alert(`Thank you for joining ${eventTitle}! More details will be sent to you.`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
