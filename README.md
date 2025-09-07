@@ -7,7 +7,7 @@ LifeNexus is a unified web platform designed to empower users to make a meaningf
 
 ---
 
-## 🌐 Live Dem
+## 🌐 Live Demo
 > Add your project’s live deployment link here (e.g., GitHub Pages).
 
 ---
