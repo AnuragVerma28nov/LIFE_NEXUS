@@ -3,7 +3,7 @@
 
 **One Platform. Many Causes. Infinite Impact.**
 
-LifeNexus is a unified web platform designed to empower users to make a meaningful difference in their communities. Whether it’s finding a blood donor in an emergency, participating in eco-awareness drives, or helping people recover lost items — LifeNexus connects people to causes that matter.
+LifeNexus is a unified web platform designed to empower users to make a meaningful difference in their communities. Whether it’s finding a blood donor in an emergency, participating in eco-awareness drives, or helping people recover lost items — LifeNexus connects people to causes that matte
 
 ---
 
