@@ -64,4 +64,4 @@ LifeNexus/
     API integration for live donor data
     Geo-location support for improved donor matching
     Admin portal to manage reported lost & found items
-    Notification system (email/SMS alerts
+    Notification system (email/SMS alerts)
