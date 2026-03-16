@@ -65,3 +65,8 @@ LifeNexus/
     Geo-location support for improved donor matching
     Admin portal to manage reported lost & found items
     Notification system (email/SMS alerts)
+
+🧑‍💻 Author
+Anurag Verma
+Year: 2024
+Thank you for visiting this repository!
