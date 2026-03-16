@@ -67,6 +67,6 @@ LifeNexus/
     Notification system (email/SMS alerts)
 
 🧑‍💻 Author
-Anurag Verma
-Year: 2024
-Thank you for visiting this repository!
+   Anurag Verma
+   Year: 2024
+   Thank you for visiting this repository!
